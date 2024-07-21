@@ -4,7 +4,7 @@ export default defineConfig({
   favicons: ['https://reactflow.dev/img/favicon.ico'],
   autoAlias: false,
   themeConfig: {
-    name: 'React Flow 中文文档',
+    name: 'React Flow',
     logo: 'https://reactflow.dev/img/favicon.ico',
     prefersColor: { default: 'auto' },
     editLink: "https://github.com/zizhuspot/reactflow-cn.js.org/edit/main/{filename}",
@@ -13,7 +13,7 @@ export default defineConfig({
       twitter: 'https://twitter.com/luozhu2021'
     },
     hd: { rules: [] },
-    footer: 'Made with ❤️ by <a href="https://github.com/zizhuspot" target="_blank">紫竹光点计划</a>'
+    footer: 'Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a>'
   },
   theme: {
     '@c-primary': '#FF0073',

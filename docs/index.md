@@ -1,10 +1,10 @@
 ---
 title: 基于节点的 React UI 库
-description: 用于构建基于节点的编辑器和互动图表的 可定制的Re act组件库
-keywords: [紫竹光点计划]
+description: 用于构建基于节点的编辑器和互动图表的可定制的 React 组件库
+keywords: [紫升, 'React Flow']
 hero:
-  title: React Flow 中文文档
-  description: 基于节点的 React UI 库
+  title: React Flow
+  description: 用于构建基于节点的编辑器和互动图表的可定制的 React 组件库
   actions:
     - text: Hello
       link: /
