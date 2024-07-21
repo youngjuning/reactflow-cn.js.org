@@ -1,0 +1,34 @@
+import { defineConfig } from 'dumi';
+
+export default defineConfig({
+  favicons: ['https://reactflow.dev/img/favicon.ico'],
+  autoAlias: false,
+  themeConfig: {
+    name: 'React Flow 中文文档',
+    logo: 'https://reactflow.dev/img/favicon.ico',
+    prefersColor: { default: 'auto' },
+    editLink: "https://github.com/zizhuspot/reactflow-cn.js.org/edit/main/{filename}",
+    socialLinks: {
+      github: 'https://github.com/zizhuspot/reactflow-cn.js.org',
+      twitter: 'https://twitter.com/luozhu2021'
+    },
+    hd: { rules: [] },
+    footer: 'Made with ❤️ by <a href="https://github.com/zizhuspot" target="_blank">紫竹光点计划</a>'
+  },
+  theme: {
+    '@c-primary': '#FF0073',
+  },
+  publicPath: '/',
+  // analytics: {
+    // ga_v2: '',
+  // },
+  // sitemap: {
+    // hostname: 'https://reactflow-cn.js.org',
+  // },
+  hash: true,
+  exportStatic: {},
+  ...(process.env.NODE_ENV === 'development' ? {} : { ssr: {} }),
+  headScripts: [
+    {src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7029815294762181', async: true, crossorigin: 'anonymous'},
+  ]
+});

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://reactflow-cn.js.org/sitemap.xml
