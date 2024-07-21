@@ -7,9 +7,9 @@ export default defineConfig({
     name: 'React Flow',
     logo: 'https://reactflow.dev/img/favicon.ico',
     prefersColor: { default: 'auto' },
-    editLink: "https://github.com/zizhuspot/reactflow-cn.js.org/edit/main/{filename}",
+    editLink: "https://github.com/youngjuning/reactflow-cn.js.org/edit/main/{filename}",
     socialLinks: {
-      github: 'https://github.com/zizhuspot/reactflow-cn.js.org',
+      github: 'https://github.com/youngjuning/reactflow-cn.js.org',
       twitter: 'https://twitter.com/luozhu2021'
     },
     hd: { rules: [] },

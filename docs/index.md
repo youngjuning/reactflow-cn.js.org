@@ -6,18 +6,16 @@ hero:
   title: React Flow
   description: 用于构建基于节点的编辑器和互动图表的可定制的 React 组件库
   actions:
-    - text: Hello
-      link: /
-    - text: World
-      link: /
+    - text: 快速开始
+      link: /learn
 features:
-  - title: Hello
+  - title: 开箱即用
     emoji: 💎
-    description: Put hello description here
-  - title: World
+    description: 你需要的东西都已就位：拖动节点、缩放、平移、选择多个节点、以及添加/移除元素等功能都已内置。
+  - title: 灵活使用
     emoji: 🌈
-    description: Put world description here
-  - title: '!'
+    description: React Flow 节点只是 React 组件，可用于您的交互元素。我们支持 Tailwind 和旧式 CSS。
+  - title: 丰富组件
     emoji: 🚀
-    description: Put ! description here
+    description: 使用 Background、Minimap、Controls、Panel、NodeToolbar 和 NodeResizer 组件制作更高级的应用程序。
 ---
