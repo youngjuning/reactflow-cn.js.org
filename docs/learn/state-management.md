@@ -35,3 +35,75 @@ yarn add zustand
 Zustand 可让你创建一个 hook，用于访问 store 的值和函数。 我们将节点和边以及 `onNodesChange`、`onEdgesChange`、`onConnect`、`setNodes` 和 `setEdges` 函数放在 store 中，以获得图形的基本交互性：
 
 <code src="./demos/create-a-store/index.tsx"></code>
+
+dumi demo 暂不支持展示类型声名文件，示例中的 `./types.ts` 文件如下：
+
+```ts | pure
+import {
+  Edge,
+  Node,
+  OnNodesChange,
+  OnEdgesChange,
+  OnConnect,
+} from '@xyflow/react';
+
+export type AppNode = Node;
+
+export type AppState = {
+  nodes: AppNode[];
+  edges: Edge[];
+  onNodesChange: OnNodesChange<AppNode>;
+  onEdgesChange: OnEdgesChange;
+  onConnect: OnConnect;
+  setNodes: (nodes: AppNode[]) => void;
+  setEdges: (edges: Edge[]) => void;
+};
+```
+
+这就是基本设置。 现在，我们有了一个带有节点和边的存储空间，它可以处理 React Flow 触发的更改（拖动、选择或删除节点或边）。当你查看 `index.tsx` 文件时，你会发现它保持得非常整洁。所有数据和动作现在都是 Store 的一部分，可以通过 `useStore` 钩子访问。
+
+## 实现一个颜色改变动作
+
+我们添加了一个新的 `updateNodeColor` 操作，用于更新特定节点的 `data.color` 字段。 为此，我们将节点 id 和新颜色传递给动作，遍历节点并用新颜色更新匹配的节点：
+
+```tsx | pure
+updateNodeColor: (nodeId: string, color: string) => {
+  set({
+    nodes: get().nodes.map((node) => {
+      if (node.id === nodeId) {
+        // 在这里创建一个新对象，以便通知 React Flow 有关更改的信息，这一点很重要。
+        return { ...node, data: { ...node.data, color } };
+      }
+
+      return node;
+    }),
+  });
+};
+```
+
+现在可以像这样在 React 组件中使用这个新动作：
+
+```tsx | pure
+const updateNodeColor = useStore((s) => s.updateNodeColor);
+...
+<button onClick={() => updateNodeColor(nodeId, color)} />;
+```
+
+## 添加一个颜色选择器节点
+
+在这一步中，我们将实现 `ColorChooserNode` 组件，并在用户更改颜色时调用 `updateNodeColor`。颜色选择器节点的自定义部分是颜色输入。
+
+```tsx | pure
+<input
+  type="color"
+  defaultValue={data.color}
+  onChange={(evt) => updateNodeColor(id, evt.target.value)}
+  className="nodrag"
+/>
+```
+
+我们添加了 `nodrag` 类名，这样用户在更改颜色时就不会误拖动节点，并在 `onChange` 事件处理程序中调用 `updateNodeColor`。
+
+<code src="./demos/updateNodeColor/index.tsx"></code>
+
+现在，你可以点击颜色选择器，更改节点的背景。
