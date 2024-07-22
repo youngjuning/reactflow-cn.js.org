@@ -14,5 +14,9 @@
   "license": "MIT",
   "devDependencies": {
     "dumi": "2.4.6"
+  },
+  "dependencies": {
+    "@xyflow/react": "^12.0.3",
+    "zustand": "^4.5.4"
   }
 }
