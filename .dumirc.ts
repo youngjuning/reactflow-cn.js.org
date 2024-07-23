@@ -1,11 +1,11 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  favicons: ['https://reactflow.dev/img/favicon.ico'],
+  favicons: ['/favicon.ico'],
   autoAlias: false,
   themeConfig: {
     name: 'React Flow',
-    logo: 'https://reactflow.dev/img/favicon.ico',
+    logo: '/favicon.ico',
     prefersColor: { default: 'auto' },
     editLink: "https://github.com/youngjuning/reactflow-cn.js.org/edit/main/{filename}",
     socialLinks: {
