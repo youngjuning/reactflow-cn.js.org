@@ -6,7 +6,7 @@ const Adsense: React.FC<any> = (props) => {
       // @ts-ignore
       (adsbygoogle = window.adsbygoogle || []).push({});
     } catch (error) {
-      console.info('谷歌广告被屏蔽了');
+      console.info('谷歌广告加载异常！', error);
     }
   }, []);
 
