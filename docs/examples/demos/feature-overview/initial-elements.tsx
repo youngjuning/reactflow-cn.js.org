@@ -1,5 +1,5 @@
 import React from 'react';
-import { MarkerType } from '@xyflow/react';
+import { Edge, MarkerType, Node } from '@xyflow/react';
 
 export const nodes = [
   {
@@ -132,7 +132,7 @@ export const nodes = [
     position: { x: 350, y: 500 },
     data: {},
   },
-];
+] as Node[];
 
 export const edges = [
   {
@@ -184,4 +184,4 @@ export const edges = [
     type: 'button',
     style: { strokeWidth: 2 },
   },
-];
+] as Edge[];

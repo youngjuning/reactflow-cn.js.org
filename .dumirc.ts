@@ -28,7 +28,7 @@ export default defineConfig({
   hash: true,
   exportStatic: {},
   ...(process.env.NODE_ENV === 'development' ? {} : { ssr: {} }),
-  headScripts: [
-    {src: '/adsbygoogle.js', async: true, crossorigin: 'anonymous'},
-  ]
+  headScripts: process.env.NODE_ENV !== 'development' ? [
+    ({src: '/adsbygoogle.js', async: true, crossorigin: 'anonymous'}),
+  ]: [],
 });
