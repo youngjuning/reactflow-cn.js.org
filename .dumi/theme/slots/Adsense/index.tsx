@@ -4,9 +4,11 @@ const Adsense: React.FC<any> = (props) => {
   useEffect(() => {
     try {
       // @ts-ignore
-      (adsbygoogle = window.adsbygoogle || []).push({});
+      (adsbygoogle = window.adsbygoogle || []).push({
+        'enable_page_level_ads': true,
+      });
     } catch (error) {
-      console.info('谷歌广告加载异常！', error);
+      console.info('谷歌广告被屏蔽了', error);
     }
   }, []);
 
