@@ -31,9 +31,12 @@ const Sidebar: FC = () => {
       <Adsense
         className="adsbygoogle"
         style={{display: "block" }}
-        data-ad-client="ca-pub-5641491107630454"
-        data-ad-slot="1206633556"
-        data-page-url="https://www.nablepart.com"
+        // data-ad-client="ca-pub-5641491107630454"
+        // data-ad-slot="1206633556"
+        // data-page-url="https://www.nablepart.com"
+        data-ad-client="ca-pub-4963807055498900"
+        data-ad-slot="1249314825"
+        data-page-url="http://pantip.com"
         data-override-format="true"
         data-ad-format="auto"
         data-full-width-responsive="true"
