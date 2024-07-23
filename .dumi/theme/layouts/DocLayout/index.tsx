@@ -97,8 +97,9 @@ const DocLayout: FC = () => {
             <Adsense
               className="adsbygoogle"
               style={{ display: "block" }}
-              data-ad-client="ca-pub-7029815294762181"
-              data-ad-slot="6412968057"
+              data-ad-client="ca-pub-7962287588031867"
+              data-ad-slot="3864703404"
+              data-page-url="https://vscode-api.js.org"
               data-ad-format="auto"
               data-full-width-responsive="true"
             />

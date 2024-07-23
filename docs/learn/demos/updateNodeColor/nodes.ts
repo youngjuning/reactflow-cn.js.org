@@ -3,7 +3,7 @@ import { AppNode } from './types';
 export default [
   {
     id: '1',
-    type: 'colorChooser',
+    type: 'colorChooser1',
     data: { color: '#4FD1C5' },
     position: { x: 250, y: 25 },
   },

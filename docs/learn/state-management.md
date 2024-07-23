@@ -9,6 +9,8 @@ group:
 toc: content
 ---
 
+# 状态管理
+
 > 在本指南中，我们假设你已经了解 React Flow 的[核心概念](/learn/core-concepts)以及如何实现[自定义节点](/learn/custom-nodes)。你还应该熟悉状态管理库的概念以及如何使用它们。
 
 在本指南中，我们将介绍如何将 React Flow 与状态管理库 [Zustand](https://zustand-cn.js.org) 结合使用。 我们将创建一个小应用程序，其中每个节点都有一个颜色选择器，用于更新其背景颜色。 在本指南中，我们将使用 Zustand，因为我们已经在 React Flow 内部使用了它，当然，你也可以使用任何其他库，如 Redux、Recoil或 Jotai。
@@ -107,3 +109,36 @@ const updateNodeColor = useStore((s) => s.updateNodeColor);
 <code src="./demos/updateNodeColor/index.tsx"></code>
 
 现在，你可以点击颜色选择器，更改节点的背景。
+
+dumi demo 暂不支持展示类型声名文件，示例中的 `./types.ts` 文件如下：
+
+```ts | pure
+import {
+  Edge,
+  Node,
+  OnNodesChange,
+  OnEdgesChange,
+  OnConnect,
+  BuiltInNode,
+} from '@xyflow/react';
+
+export type ColorNode = Node<
+  {
+    color: string;
+  },
+  'colorChooser'
+>;
+
+export type AppNode = ColorNode | BuiltInNode;
+
+export type AppState = {
+  nodes: AppNode[];
+  edges: Edge[];
+  onNodesChange: OnNodesChange<AppNode>;
+  onEdgesChange: OnEdgesChange;
+  onConnect: OnConnect;
+  setNodes: (nodes: AppNode[]) => void;
+  setEdges: (edges: Edge[]) => void;
+  updateNodeColor: (nodeId: string, color: string) => void;
+};
+```
