@@ -38,30 +38,6 @@ Zustand 可让你创建一个 hook，用于访问 store 的值和函数。 我�
 
 <code src="./demos/create-a-store/index.tsx"></code>
 
-dumi demo 暂不支持展示类型声名文件，示例中的 `./types.ts` 文件如下：
-
-```ts | pure
-import {
-  Edge,
-  Node,
-  OnNodesChange,
-  OnEdgesChange,
-  OnConnect,
-} from '@xyflow/react';
-
-export type AppNode = Node;
-
-export type AppState = {
-  nodes: AppNode[];
-  edges: Edge[];
-  onNodesChange: OnNodesChange<AppNode>;
-  onEdgesChange: OnEdgesChange;
-  onConnect: OnConnect;
-  setNodes: (nodes: AppNode[]) => void;
-  setEdges: (edges: Edge[]) => void;
-};
-```
-
 这就是基本设置。 现在，我们有了一个带有节点和边的存储空间，它可以处理 React Flow 触发的更改（拖动、选择或删除节点或边）。当你查看 `index.tsx` 文件时，你会发现它保持得非常整洁。所有数据和动作现在都是 Store 的一部分，可以通过 `useStore` 钩子访问。
 
 ## 实现一个颜色改变动作
@@ -109,36 +85,3 @@ const updateNodeColor = useStore((s) => s.updateNodeColor);
 <code src="./demos/updateNodeColor/index.tsx"></code>
 
 现在，你可以点击颜色选择器，更改节点的背景。
-
-dumi demo 暂不支持展示类型声名文件，示例中的 `./types.ts` 文件如下：
-
-```ts | pure
-import {
-  Edge,
-  Node,
-  OnNodesChange,
-  OnEdgesChange,
-  OnConnect,
-  BuiltInNode,
-} from '@xyflow/react';
-
-export type ColorNode = Node<
-  {
-    color: string;
-  },
-  'colorChooser'
->;
-
-export type AppNode = ColorNode | BuiltInNode;
-
-export type AppState = {
-  nodes: AppNode[];
-  edges: Edge[];
-  onNodesChange: OnNodesChange<AppNode>;
-  onEdgesChange: OnEdgesChange;
-  onConnect: OnConnect;
-  setNodes: (nodes: AppNode[]) => void;
-  setEdges: (edges: Edge[]) => void;
-  updateNodeColor: (nodeId: string, color: string) => void;
-};
-```

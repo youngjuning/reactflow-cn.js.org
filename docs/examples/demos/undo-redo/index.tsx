@@ -23,7 +23,8 @@ uuid();
 
 const UndoRedoFlow = () => {
   const nodesInitialized = useNodesInitialized();
-  const { addNodes, addEdges, fitView, updateEdge } = useReactFlow();
+  const { fitView, updateEdge, toObject, addNodes, addEdges } = useReactFlow();
+
   const {
     nodes,
     edges,
@@ -44,7 +45,7 @@ const UndoRedoFlow = () => {
 
   const { undo, redo, record } = useUndoRedo();
 
-  const handleAddNode = (evt) => {
+  const handleAddNode = () => {
     const newNode = {
       id: uuid(),
       data: { label: 'new node' },
@@ -52,15 +53,15 @@ const UndoRedoFlow = () => {
         x: 0,
         y: 0,
       },
-    }
+    };
     record(() => {
       addNodes(newNode);
       addEdges({
         id: uuid(),
         source: '1',
         target: newNode.id,
-      })
-    })
+      });
+    });
   };
 
   const handleInsertNode = () => {
@@ -71,7 +72,7 @@ const UndoRedoFlow = () => {
         x: 0,
         y: 0,
       },
-    }
+    };
     record(() => {
       addNodes(newNode);
       addEdges({
@@ -79,20 +80,20 @@ const UndoRedoFlow = () => {
         source: '2',
         target: newNode.id,
       });
-      const targetEdge = edges.find(edge => edge.source === '2');
+      const targetEdge = edges.find((edge) => edge.source === '2');
       updateEdge(targetEdge?.id as string, {
         source: newNode.id,
       });
-    })
+    });
   };
 
   const onLayout = React.useCallback(
-    (direction) => {
+    (direction: 'LR' | 'TB') => {
       const layouted = getLayoutedElements(nodes, edges, { direction });
 
       setNodes([...layouted.nodes]);
       setEdges([...layouted.edges]);
-      // Maybe setTimeout(() => fitView(), 100)
+
       window.requestAnimationFrame(() => {
         fitView();
       });
@@ -107,22 +108,31 @@ const UndoRedoFlow = () => {
   }, [nodesInitialized, nodes.length]);
 
   return (
-    <div className="app" style={{ height: '500px', border: '1px solid #ddd', borderRadius: '8px' }}>
+    <div
+      className="app"
+      style={{ height: '500px', border: '1px solid #ddd', borderRadius: '8px' }}
+    >
       <ReactFlow
         nodes={nodes}
         edges={edges}
         onNodesChange={(changes) => {
-          changes.forEach(change => {
-            if (change.type === 'dimensions') {
-              onNodesChange([change]);
-            } else {
+          changes.forEach((change) => {
+            if (change.type !== 'dimensions') {
               record(() => {
                 onNodesChange([change]);
-              })
+              });
+            } else {
+              onNodesChange([change]);
             }
-          })
+          });
         }}
-        onEdgesChange={onEdgesChange}
+        onEdgesChange={(changes) => {
+          // NOTE 1: 不记录 edge 的变更，undo(1) 就可以把 edge 和 node 都还原
+          // NOTE 2: 记录 edge 的变更，undo(2) 才能把 edge 和 node 都还原
+          // record(() => {
+          onEdgesChange(changes);
+          // })
+        }}
         nodesDraggable={false}
         defaultEdgeOptions={{
           animated: true,
@@ -137,6 +147,15 @@ const UndoRedoFlow = () => {
           <button onClick={() => redo()}>重做</button>
         </Panel>
         <Controls orientation="horizontal" position="top-left" />
+        <Panel position="bottom-left">
+          <button
+            onClick={() => {
+              console.info(toObject());
+            }}
+          >
+            打印数据
+          </button>
+        </Panel>
         <Panel position="bottom-right">
           <button onClick={handleAddNode}>添加元素</button>
           <button onClick={handleInsertNode}>插入元素</button>

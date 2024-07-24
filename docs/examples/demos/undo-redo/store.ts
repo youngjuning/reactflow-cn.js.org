@@ -11,7 +11,6 @@ import {
   OnEdgesChange,
   OnConnect,
 } from '@xyflow/react';
-import isDeepEqual from 'fast-deep-equal';
 import initialNodes from './nodes';
 import initialEdges from './edges';
 import _ from "lodash";
@@ -56,10 +55,9 @@ const useStore = create<AppState>()(
         },
         setEdges: (edges) => {
           set({ edges });
-        },
+        }
       }),
       {
-        equality: isDeepEqual,
         // 偏函数
         partialize: (state) => {
           const { nodes, edges } = state;

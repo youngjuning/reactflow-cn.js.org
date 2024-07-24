@@ -1,10 +1,29 @@
 import React from 'react';
 import { useShallow } from 'zustand/react/shallow';
-import { ReactFlow } from '@xyflow/react';
+import {
+  ReactFlow,
+  Edge,
+  Node,
+  OnNodesChange,
+  OnEdgesChange,
+  OnConnect,
+} from '@xyflow/react';
 
 import '@xyflow/react/dist/style.css';
 
 import useStore from './store';
+
+export type AppNode = Node;
+
+export type AppState = {
+  nodes: AppNode[];
+  edges: Edge[];
+  onNodesChange: OnNodesChange<AppNode>;
+  onEdgesChange: OnEdgesChange;
+  onConnect: OnConnect;
+  setNodes: (nodes: AppNode[]) => void;
+  setEdges: (edges: Edge[]) => void;
+};
 
 const selector = (state) => ({
   nodes: state.nodes,
@@ -20,7 +39,7 @@ function Flow() {
   );
 
   return (
-    <div style={{height: '500px'}}>
+    <div style={{ height: '500px' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
