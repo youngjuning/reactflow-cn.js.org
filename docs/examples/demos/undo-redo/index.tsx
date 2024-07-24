@@ -107,7 +107,7 @@ const UndoRedoFlow = () => {
   }, [nodesInitialized, nodes.length]);
 
   return (
-    <div className="app" style={{ height: '500px' }}>
+    <div className="app" style={{ height: '500px', border: '1px solid #ddd', borderRadius: '8px' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -128,6 +128,7 @@ const UndoRedoFlow = () => {
           animated: true,
           type: ConnectionLineType.SmoothStep,
         }}
+        proOptions={{ hideAttribution: true }}
         fitView
       >
         <Background />
@@ -136,13 +137,9 @@ const UndoRedoFlow = () => {
           <button onClick={() => redo()}>重做</button>
         </Panel>
         <Controls orientation="horizontal" position="top-left" />
-        <Panel position="bottom-left">
+        <Panel position="bottom-right">
           <button onClick={handleAddNode}>添加元素</button>
           <button onClick={handleInsertNode}>插入元素</button>
-        </Panel>
-        <Panel position="bottom-right">
-          <button onClick={() => onLayout('LR')}>水平布局</button>
-          <button onClick={() => onLayout('TB')}>垂直布局</button>
         </Panel>
       </ReactFlow>
     </div>
