@@ -72,7 +72,7 @@ const useStore = create<AppState>()(
 );
 
 
-export const useUndoRedo = () => {
+export const useUndoRedo = (isTracking = true) => {
   const temporalStore = useStore.temporal.getState();
   if (temporalStore.isTracking) {
     // 暂停时间旅行机器，
