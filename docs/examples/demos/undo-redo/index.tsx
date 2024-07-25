@@ -93,10 +93,7 @@ const UndoRedoFlow = () => {
 
       setNodes([...layouted.nodes]);
       setEdges([...layouted.edges]);
-
-      window.requestAnimationFrame(() => {
-        fitView();
-      });
+      setTimeout(() => fitView());
     },
     [nodes, edges],
   );
