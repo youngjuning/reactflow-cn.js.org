@@ -113,8 +113,9 @@ const UndoRedoFlow = () => {
         nodes={nodes}
         edges={edges}
         onNodesChange={(changes) => {
+          const recordTypes = new Set(['add', 'remove']);
           changes.forEach((change) => {
-            if (change.type !== 'dimensions') {
+            if (recordTypes.has(change.type)) {
               record(() => {
                 onNodesChange([change]);
               });
@@ -124,11 +125,16 @@ const UndoRedoFlow = () => {
           });
         }}
         onEdgesChange={(changes) => {
-          // NOTE 1: 不记录 edge 的变更，undo(1) 就可以把 edge 和 node 都还原
-          // NOTE 2: 记录 edge 的变更，undo(2) 才能把 edge 和 node 都还原
-          // record(() => {
-          onEdgesChange(changes);
-          // })
+          const recordTypes = new Set(['add', 'remove']);
+          changes.forEach((change) => {
+            if (recordTypes.has(change.type)) {
+              record(() => {
+                onEdgesChange([change]);
+              });
+            } else {
+              onEdgesChange([change]);
+            }
+          });
         }}
         nodesDraggable={false}
         defaultEdgeOptions={{
