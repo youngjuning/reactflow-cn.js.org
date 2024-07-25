@@ -43,7 +43,7 @@ const UndoRedoFlow = () => {
     })),
   );
 
-  const { undo, redo, record } = useUndoRedo();
+  const { undo, redo, record } = useUndoRedo(false);
 
   const handleAddNode = () => {
     const newNode = {
