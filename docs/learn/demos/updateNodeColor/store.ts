@@ -3,7 +3,7 @@ import { addEdge, applyNodeChanges, applyEdgeChanges } from '@xyflow/react';
 
 import initialNodes from './nodes';
 import initialEdges from './edges';
-import { AppNode, AppState, ColorNode } from './types';
+import { AppNode, AppState, ColorNode } from './index';
 
 function isColorChooserNode(node: AppNode): node is ColorNode {
   return node.type === 'colorChooser';

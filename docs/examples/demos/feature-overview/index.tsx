@@ -47,7 +47,7 @@ const OverviewFlow = () => {
   );
 
   return (
-    <div style={{ height: '500px'}}>
+    <div style={{ height: '800px'}}>
       <ReactFlow
         nodes={nodes}
         edges={edges}

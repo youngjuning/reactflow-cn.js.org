@@ -8,7 +8,7 @@ const Adsense: React.FC<any> = (props) => {
         'enable_page_level_ads': true,
       });
     } catch (error) {
-      console.info('谷歌广告被屏蔽了', error);
+      // console.info('谷歌广告加载异常', error);
     }
   }, []);
 

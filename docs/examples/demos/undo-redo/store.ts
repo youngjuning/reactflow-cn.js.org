@@ -1,4 +1,4 @@
-import { create, useStore } from 'zustand';
+import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import { temporal } from 'zundo';
 import {
@@ -11,10 +11,9 @@ import {
   OnEdgesChange,
   OnConnect,
 } from '@xyflow/react';
-import isDeepEqual from 'fast-deep-equal';
 import initialNodes from './nodes';
 import initialEdges from './edges';
-import { shallow } from 'zustand/shallow';
+import _ from "lodash";
 
 export type AppNode = Node;
 
@@ -26,14 +25,11 @@ export type AppState = {
   onConnect: OnConnect;
   setNodes: (nodes: AppNode[]) => void;
   setEdges: (edges: Edge[]) => void;
-  addNode: (node: AppNode) => void;
 };
-
-export const useTemporalStore = () => useStore(useFlowStore.temporal);
 
 // 这是我们的 useStore hook，我们可以在我们的组件中使用它来获取 store 并调用动作
 // 注意：immer 使用方式是 create()(immer(() => ({})))
-const useFlowStore = create<AppState>()(
+const useStore = create<AppState>()(
   immer(
     temporal(
       (set, get) => ({
@@ -59,24 +55,15 @@ const useFlowStore = create<AppState>()(
         },
         setEdges: (edges) => {
           set({ edges });
-        },
-        addNode: (node) => {
-          set({
-            nodes: [...get().nodes, node],
-          });
-        },
+        }
       }),
       {
-        equality: (pastState, currentState) => {
-          console.info('equality', pastState, currentState);
-          return shallow(pastState, currentState);
-        },
         // 偏函数
         partialize: (state) => {
           const { nodes, edges } = state;
           return {
-            nodes,
             edges,
+            nodes,
           };
         },
       },
@@ -84,4 +71,22 @@ const useFlowStore = create<AppState>()(
   ),
 );
 
-export default useFlowStore;
+
+export const useUndoRedo = (isTracking = true) => {
+  const temporalStore = useStore.temporal.getState();
+  if (temporalStore.isTracking) {
+    // 暂停时间旅行机器，
+    temporalStore.pause();
+  }
+
+  return {
+    ...temporalStore,
+    record: (callback: () => void) => {
+      temporalStore.resume();
+      callback();
+      temporalStore.pause();
+    }
+  }
+};
+
+export default useStore;

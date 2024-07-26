@@ -1,11 +1,39 @@
 import React from 'react';
 import { useShallow } from 'zustand/react/shallow';
-import { ReactFlow } from '@xyflow/react';
+import {
+  ReactFlow,
+  Edge,
+  Node,
+  OnNodesChange,
+  OnEdgesChange,
+  OnConnect,
+  BuiltInNode,
+} from '@xyflow/react';
 
 import '@xyflow/react/dist/style.css';
 
 import useStore from './store';
 import ColorChooserNode from './ColorChooserNode';
+
+export type ColorNode = Node<
+  {
+    color: string;
+  },
+  'colorChooser'
+>;
+
+export type AppNode = ColorNode | BuiltInNode;
+
+export type AppState = {
+  nodes: AppNode[];
+  edges: Edge[];
+  onNodesChange: OnNodesChange<AppNode>;
+  onEdgesChange: OnEdgesChange;
+  onConnect: OnConnect;
+  setNodes: (nodes: AppNode[]) => void;
+  setEdges: (edges: Edge[]) => void;
+  updateNodeColor: (nodeId: string, color: string) => void;
+};
 
 const nodeTypes = { colorChooser: ColorChooserNode };
 
