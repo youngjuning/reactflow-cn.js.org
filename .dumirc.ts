@@ -35,7 +35,7 @@ export default defineConfig({
       ? [{ src: '/adsbygoogle.js', async: true, crossorigin: 'anonymous' }]
       : [],
   scripts:
-    process.env.NODE_ENV === 'development'
+    process.env.NODE_ENV !== 'development'
       ? [
           {
             async: true,
