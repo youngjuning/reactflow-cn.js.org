@@ -12,11 +12,11 @@ import {
 } from 'dumi';
 import Content from 'dumi/theme-default/slots/Content';
 import Features from 'dumi/theme-default/slots/Features';
+import ContentFooter from 'dumi/theme-default/slots/ContentFooter';
 import Footer from 'dumi/theme-default/slots/Footer';
 import Header from 'dumi/theme-default/slots/Header';
 import Hero from 'dumi/theme-default/slots/Hero';
 import Sidebar from '../../slots/Sidebar';
-import ContentFooter from '../../slots/ContentFooter'
 import Adsense from '../../slots/Adsense';
 import Toc from 'dumi/theme-default/slots/Toc';
 import React, { useEffect, useState, type FC } from 'react';

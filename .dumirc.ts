@@ -14,7 +14,7 @@ export default defineConfig({
       twitter: 'https://twitter.com/luozhu2021',
     },
     hd: { rules: [] },
-    footer: `Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a><br/><div style="width:180px;margin: 0 auto"><script async type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=kvgeYP8qIu8lbwRcPtpsgFsJddybCkmKoAYKFHF6JY8"></script></div><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span></span> | <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span></span>`,
+    footer: `Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a><br/><div style="width:180px;margin: 0 auto"><script async type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=kvgeYP8qIu8lbwRcPtpsgFsJddybCkmKoAYKFHF6JY8"></script></div>`,
   },
   theme: {
     '@c-primary': '#FF0073',
@@ -33,11 +33,4 @@ export default defineConfig({
     process.env.NODE_ENV !== 'development'
       ? [{ src: '/adsbygoogle.js', async: true, crossorigin: 'anonymous' }]
       : [],
-  scripts: [
-    {
-      async: true,
-      src: 'https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js',
-      crossorigin: 'anonymous',
-    },
-  ],
 });
