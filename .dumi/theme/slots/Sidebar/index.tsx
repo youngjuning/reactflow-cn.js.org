@@ -30,7 +30,7 @@ const Sidebar: FC = () => {
       ))}
       <Adsense
         className="adsbygoogle"
-        style={{display: "block" }}
+        style={{ display: "block" }}
         data-ad-client="ca-pub-5641491107630454"
         data-ad-slot="1206633556"
         data-page-url="https://nablepart.com"
