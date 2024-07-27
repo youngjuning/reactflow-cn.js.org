@@ -21,9 +21,9 @@ export default defineConfig({
     '@c-primary': '#FF0073',
   },
   publicPath: '/',
-  analytics: {
-    ga_v2: 'G-W512Y7N0FN',
-  },
+  // analytics: {
+  //   ga_v2: 'G-W512Y7N0FN',
+  // },
   // sitemap: {
   // hostname: 'https://reactflow-dev.js.org',
   // },
@@ -35,11 +35,10 @@ export default defineConfig({
       ? [{ src: '/adsbygoogle.js', async: true, crossorigin: 'anonymous' }]
       : [],
   scripts:
-    process.env.NODE_ENV !== 'development'
+    process.env.NODE_ENV === 'development'
       ? [
           {
-            async: true,
-            src: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js',
+            src: 'https://busuanzi.icodeq.com/busuanzi.pure.mini.js',
             crossorigin: 'anonymous'
           },
         ]
