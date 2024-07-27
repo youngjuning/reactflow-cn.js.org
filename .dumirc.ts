@@ -35,6 +35,7 @@ export default defineConfig({
       : [],
   scripts: [
     {
+      async: true,
       src: 'https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js',
       crossorigin: 'anonymous',
     },
