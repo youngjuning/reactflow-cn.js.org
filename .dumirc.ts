@@ -20,9 +20,9 @@ export default defineConfig({
     '@c-primary': '#FF0073',
   },
   publicPath: '/',
-  // analytics: {
-  //   ga_v2: 'G-W512Y7N0FN',
-  // },
+  analytics: {
+    ga_v2: 'G-W512Y7N0FN',
+  },
   // sitemap: {
   // hostname: 'https://reactflow-dev.js.org',
   // },
