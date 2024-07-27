@@ -91,23 +91,26 @@ const DocLayout: FC = () => {
       )}
       <main>
         {showSidebar && <Sidebar />}
-        <Content>
-          <article>
-            {outlet}
-          </article>
-            <Adsense
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-5641491107630454"
-              data-ad-slot="5596588097"
-              data-page-url="https://nablepart.com"
-              data-override-format="true"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
-          <ContentFooter />
-          <Footer />
-        </Content>
+        <div style={{flex: 1}}>
+          <Content>
+            <article>
+              {outlet}
+            </article>
+            <ContentFooter />
+            <Footer />
+          </Content>
+          <Adsense
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-5641491107630454"
+            data-ad-slot="5596588097"
+            data-page-url="https://nablepart.com"
+            data-override-format="true"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+          <script async type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=kvgeYP8qIu8lbwRcPtpsgFsJddybCkmKoAYKFHF6JY8"></script>
+        </div>
         {fm.toc === 'content' && (
           <div className="dumi-default-doc-layout-toc-wrapper">
             <h4>TABLE OF CONTENTS</h4>
