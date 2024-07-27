@@ -35,7 +35,7 @@ export default defineConfig({
       : [],
   scripts: [
     {
-      src: 'https://busuanzi.icodeq.com/busuanzi.pure.mini.js',
+      src: 'https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js',
       crossorigin: 'anonymous',
     },
   ],
