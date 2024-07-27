@@ -7,28 +7,31 @@ export default defineConfig({
     name: 'React Flow',
     logo: '/favicon.ico',
     prefersColor: { default: 'auto' },
-    editLink: "https://github.com/youngjuning/reactflow-cn.js.org/edit/main/{filename}",
+    editLink:
+      'https://github.com/youngjuning/reactflow-cn.js.org/edit/main/{filename}',
     socialLinks: {
       github: 'https://github.com/youngjuning/reactflow-cn.js.org',
-      twitter: 'https://twitter.com/luozhu2021'
+      twitter: 'https://twitter.com/luozhu2021',
     },
     hd: { rules: [] },
-    footer: 'Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a>'
+    footer:
+      'Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a><br/><div style="width:200px"><script async type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=kvgeYP8qIu8lbwRcPtpsgFsJddybCkmKoAYKFHF6JY8"></script></div>',
   },
   theme: {
     '@c-primary': '#FF0073',
   },
   publicPath: '/',
   // analytics: {
-    // ga_v2: '',
+  // ga_v2: '',
   // },
   // sitemap: {
-    // hostname: 'https://reactflow-cn.js.org',
+  // hostname: 'https://reactflow-cn.js.org',
   // },
   hash: true,
   exportStatic: {},
   ...(process.env.NODE_ENV === 'development' ? {} : { ssr: {} }),
-  headScripts: process.env.NODE_ENV !== 'development' ? [
-    ({src: '/adsbygoogle.js', async: true, crossorigin: 'anonymous'}),
-  ]: [],
+  headScripts:
+    process.env.NODE_ENV !== 'development'
+      ? [{ src: '/adsbygoogle.js', async: true, crossorigin: 'anonymous' }]
+      : [],
 });

@@ -112,7 +112,6 @@ const DocLayout: FC = () => {
         </div>
         {fm.toc === 'content' && (
           <div className="dumi-default-doc-layout-toc-wrapper">
-            <script async type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=kvgeYP8qIu8lbwRcPtpsgFsJddybCkmKoAYKFHF6JY8"></script>
             <h4>TABLE OF CONTENTS</h4>
             <Toc />
           </div>
