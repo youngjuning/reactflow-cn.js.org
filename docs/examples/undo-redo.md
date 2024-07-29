@@ -12,4 +12,4 @@ group:
 
 <code src="./demos/undo-redo/index.tsx"></code>
 
-由于 [strange node reorder after setNode](https://github.com/xyflow/xyflow/issues/3967) Bug，基于 Sub Flow 的话需要自己实现 `addEdges` 和 `addNodes` 方法。
+由于 [strange node reorder after setNode](https://github.com/xyflow/xyflow/issues/3967) 问题，基于 Sub Flow 的话需要自己实现 `addEdges` 和 `addNodes` 方法。
