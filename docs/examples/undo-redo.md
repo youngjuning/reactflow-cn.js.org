@@ -11,3 +11,5 @@ group:
 此示例展示了如何基于 Zustand 和 Zundo 为 React Flow 实现简单的撤销和重做功能。
 
 <code src="./demos/undo-redo/index.tsx"></code>
+
+由于 [strange node reorder after setNode](https://github.com/xyflow/xyflow/issues/3967) Bug，基于 Sub Flow 的话需要自己实现 `addEdges` 和 `addNodes` 方法。

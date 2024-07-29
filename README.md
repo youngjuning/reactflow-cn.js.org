@@ -6,13 +6,13 @@
 
 ```bash
 # install dependencies
-$ yarn install
+yarn install
 
 # start dev server
-$ yarn start
+yarn start
 
 # build docs
-$ yarn run build
+yarn run build
 ```
 
 ## LICENSE

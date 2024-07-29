@@ -19,7 +19,6 @@ import useStore, { useUndoRedo } from './store';
 import { getLayoutedElements } from './getLayoutedElements';
 
 const uuid = customAlphabet('0123456789abcdefghijklmnopqrstuvwxyz', 16); //=> "4f90d13a42"
-uuid();
 
 const UndoRedoFlow = () => {
   const nodesInitialized = useNodesInitialized();
