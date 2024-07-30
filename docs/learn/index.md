@@ -8,6 +8,8 @@ nav:
   order: 1
 ---
 
+# 快速开始
+
 如果你想尽快开始运行，那就来对地方了！ 本页面将在几分钟内带你从零起步到运行 React Flow 应用程序。 从这里开始，你可以深入了解 React Flow，查看示例或深入研究 API 文档。
 
 你可以查看我们在 [CodeSandbox](https://new.reactflow.dev/ts) 上提供的入门项目，尝试 React Flow，而无需在本地进行任何设置。
