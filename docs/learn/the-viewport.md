@@ -104,6 +104,7 @@ import {
   addEdge,
   useEdgesState,
   useNodesState,
+  SelectionMode,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
