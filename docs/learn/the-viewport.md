@@ -130,6 +130,8 @@ const initialEdges = [
   { id: 'e1-3', source: '1', target: '3' },
 ];
 
+const panOnDrag = [1, 2];
+
 function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
