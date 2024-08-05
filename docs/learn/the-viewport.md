@@ -2,7 +2,7 @@
 order: 4
 title: 平移和缩放
 description: React Flow 的默认平移和缩放行为受到了滑动地图的启发。你可以通过拖动来平移，通过滚动来缩放。你可以使用所提供的 props 轻松定制这种行为。
-keywords: [React Flow, React, Node, Edge]
+keywords: [React Flow, React, Node, Edge, 'React Flow 中文文档']
 group:
   title: 概念
   order: 1
