@@ -8,9 +8,9 @@ export default defineConfig({
     logo: '/favicon.ico',
     prefersColor: { default: 'auto' },
     editLink:
-      'https://github.com/youngjuning/reactflow-dev.js.org/edit/main/{filename}',
+      'https://github.com/youngjuning/reactflow-cn.js.org/edit/main/{filename}',
     socialLinks: {
-      github: 'https://github.com/youngjuning/reactflow-dev.js.org',
+      github: 'https://github.com/youngjuning/reactflow-cn.js.org',
       twitter: 'https://twitter.com/luozhu2021',
     },
     hd: { rules: [] },
@@ -23,9 +23,9 @@ export default defineConfig({
   analytics: {
     ga_v2: 'G-W512Y7N0FN',
   },
-  // sitemap: {
-  // hostname: 'https://reactflow-dev.js.org',
-  // },
+  sitemap: {
+  hostname: 'https://reactflow-cn.js.org',
+  },
   hash: true,
   exportStatic: {},
   ...(process.env.NODE_ENV === 'development' ? {} : { ssr: {} }),
