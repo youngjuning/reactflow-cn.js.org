@@ -1,7 +1,7 @@
 ---
 order: 2
 title: 术语和定义
-description: 在这部分文档中，我们将解释一些基本的 React Flow 术语和定义。React Flow 中会经常用到的三个东西是节点、边和连接桩。
+description: React Flow 中文文档 - 在这部分文档中，我们将解释一些基本的 React Flow 术语和定义。React Flow 中会经常用到的三个东西是节点、边和连接桩。
 keywords: [React Flow, React, Node, Edge, Handle, 'React Flow 中文文档']
 group:
   title: 概念
