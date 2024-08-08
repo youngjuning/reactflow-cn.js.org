@@ -104,7 +104,7 @@ const DocLayout: FC = () => {
             style={{ display: "block" }}
             data-ad-client="ca-pub-5641491107630454"
             data-ad-slot="5596588097"
-            data-page-url="https://nablepart.com"
+            data-page-url="https://reactflow.nablepart.com"
             data-override-format="true"
             data-ad-format="auto"
             data-full-width-responsive="true"
