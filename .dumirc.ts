@@ -16,7 +16,11 @@ export default defineConfig({
     hd: { rules: [] },
     footer: `Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a><br/><div style="width:180px;margin: 0 auto"><script async type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=kvgeYP8qIu8lbwRcPtpsgFsJddybCkmKoAYKFHF6JY8"></script></div>`,
   },
-  styles: [`ins[data-ad-status="unfilled"] {display: none}`],
+  styles: [
+    `ins.adsbygoogle[data-ad-status="unfilled"] {
+      display: none !important;
+    }`,
+  ],
   theme: {
     '@c-primary': '#FF0073',
   },
@@ -25,7 +29,7 @@ export default defineConfig({
     ga_v2: 'G-W512Y7N0FN',
   },
   sitemap: {
-  hostname: 'https://reactflow-cn.js.org',
+    hostname: 'https://reactflow-cn.js.org',
   },
   hash: true,
   exportStatic: {},
