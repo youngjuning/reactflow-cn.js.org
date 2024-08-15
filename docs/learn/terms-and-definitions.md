@@ -226,6 +226,9 @@ export default function App() {
 }
 ```
 
+边连接两个节点。每条边都需要一个目标节点和一个源节点。 React Flow 内置了四种边缘类型：`default`（贝塞尔）、`smoothstep`、`step` 和 `straight`。边是一个 SVG 路径，可使用 CSS 进行样式设置，并且完全可自定义。如果使用多个连接桩，可以分别引用它们，为一个节点创建多个连接。
+
+
 ### 自定义边（Custom Edges）
 
 与自定义节点一样，你也可以自定义边。用户可以使用自定义边做以下事情：
