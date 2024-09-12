@@ -14,7 +14,7 @@ export default defineConfig({
       twitter: 'https://twitter.com/luozhu2021',
     },
     hd: { rules: [] },
-    footer: `Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a><br/><div style="width:180px;margin: 0 auto"></div>`,
+    footer: `Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a><br/><div style="width:180px;margin: 0 auto"><script async type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=kvgeYP8qIu8lbwRcPtpsgFsJddybCkmKoAYKFHF6JY8"></script></div>`,
   },
   styles: [
     `ins.adsbygoogle[data-ad-status=unfilled] {
