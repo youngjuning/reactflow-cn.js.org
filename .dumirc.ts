@@ -45,7 +45,7 @@ export default defineConfig({
       crossorigin: 'anonymous',
     },
     {
-      src: '/busuanzi.pure.mini.js',
+      src: '/busuanzi.pure.min.js',
       async: true,
       crossorigin: 'anonymous',
     },
