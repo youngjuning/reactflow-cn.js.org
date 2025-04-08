@@ -14,7 +14,11 @@ export default defineConfig({
       twitter: 'https://twitter.com/luozhu2021',
     },
     hd: { rules: [] },
-    footer: `Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a><br/><div style="width:180px;margin: 0 auto"><script async type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=kvgeYP8qIu8lbwRcPtpsgFsJddybCkmKoAYKFHF6JY8"></script></div>`,
+    footer: `
+<div>Made with ❤️ by <a href="https://github.com/youngjuning" target="_blank">紫升</a></div>
+<div>
+  本页访问量 <span id="busuanzi_value_page_pv"></span> | 本站总访问量 <span id="busuanzi_value_site_pv"></span> | 本站总访人数 <span id="busuanzi_value_site_uv"></span>
+</div>`,
   },
   styles: [
     `ins.adsbygoogle[data-ad-status=unfilled] {
@@ -35,6 +39,14 @@ export default defineConfig({
   exportStatic: {},
   ...(process.env.NODE_ENV === 'development' ? {} : { ssr: {} }),
   headScripts: [
-    {src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', async: true, crossorigin: 'anonymous'}
-  ]
+    {
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+      async: true,
+      crossorigin: 'anonymous',
+    },
+    {
+      src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js',
+      async: true,
+    },
+  ],
 });

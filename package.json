@@ -14,7 +14,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/lodash": "^4.17.7",
-    "dumi": "2.4.6"
+    "dumi": "latest"
   },
   "dependencies": {
     "@ant-design/icons-svg": "^4.4.2",

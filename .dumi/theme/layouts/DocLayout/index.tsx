@@ -14,8 +14,8 @@ import Content from 'dumi/theme-default/slots/Content';
 import Features from 'dumi/theme-default/slots/Features';
 import ContentFooter from 'dumi/theme-default/slots/ContentFooter';
 import Footer from 'dumi/theme-default/slots/Footer';
-import Header from 'dumi/theme-default/slots/Header';
-import Hero from 'dumi/theme-default/slots/Hero';
+import Header from '../../slots/Header';
+import Hero from '../../slots/Hero';
 import Sidebar from '../../slots/Sidebar';
 import Adsense from '../../slots/Adsense';
 import Toc from 'dumi/theme-default/slots/Toc';
@@ -93,16 +93,25 @@ const DocLayout: FC = () => {
         {showSidebar && <Sidebar />}
         <Content>
           <article>
+            <Adsense
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-client="ca-pub-5641491107630454"
+              data-ad-slot="6927942793"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+              data-page-url="https://www.nablepart.com"
+            />
             {outlet}
             <Adsense
               className="adsbygoogle"
               style={{ display: "block" }}
               data-ad-client="ca-pub-5641491107630454"
               data-ad-slot="5596588097"
-              data-page-url="https://www.nablepart.com"
               data-override-format="true"
               data-ad-format="auto"
               data-full-width-responsive="true"
+              data-page-url="https://www.nablepart.com"
             />
           </article>
           <ContentFooter />

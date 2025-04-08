@@ -18,6 +18,50 @@ body {
   font-family: sans-serif;
   background-color: @c-site-bg;
 
+  .dumi-default-logo img {
+    border-radius: 50%;
+  }
+
+  .dumi-default-sidebar {
+    width: 216px;
+    padding-inline-end: 24px;
+  }
+
+  .zanzhushang {
+    position: relative;
+    img {
+      display: block;
+    }
+    &::after {
+      position: absolute;
+      content: "赞助商";
+      font-size: 12px;
+      font-weight: 500;
+      color: @c-text-note;
+      right: 4px;
+      bottom: 4px;
+    }
+  }
+
+  #busuanzi_value_page_pv, #busuanzi_value_site_uv, #busuanzi_value_site_pv {
+    color: @c-primary;
+  }
+
+  ins.adsbygoogle-top {
+    margin-bottom: 16px;
+  }
+
+  ins.adsbygoogle-bottom {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  // 使用 data-ad-status 参数隐藏广告空缺的广告单元
+  // https://support.google.com/adsense/answer/10762946?hl=zh-Hans
+  ins.adsbygoogle[data-ad-status="unfilled"] {
+    display: none !important;
+  }
+
   @{dark-selector} & {
     background-color: @c-site-bg-dark;
   }
