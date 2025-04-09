@@ -20,11 +20,6 @@ export default defineConfig({
   本页访问量 <span id="busuanzi_value_page_pv"></span> | 本站总访问量 <span id="busuanzi_value_site_pv"></span> | 本站总访人数 <span id="busuanzi_value_site_uv"></span>
 </div>`,
   },
-  styles: [
-    `ins.adsbygoogle[data-ad-status=unfilled] {
-      display: none !important;
-    }`,
-  ],
   theme: {
     '@c-primary': '#FF0073',
   },
