@@ -100,7 +100,7 @@ const DocLayout: FC = () => {
               data-ad-slot="6927942793"
               data-ad-format="auto"
               data-full-width-responsive="true"
-              data-page-url="https://www.nablepart.com"
+              data-page-url="https://nablepart.com"
             /> */}
             <a href="https://tensorium.ai/?aff=youngjuning" target="_blank"><img src="https://tensorium.ai/gif/Tens-1200x150.gif" alt="Tensorium" width={"100%"}/></a>
             {outlet}
@@ -112,7 +112,7 @@ const DocLayout: FC = () => {
               data-override-format="true"
               data-ad-format="auto"
               data-full-width-responsive="true"
-              data-page-url="https://www.nablepart.com"
+              data-page-url="https://nablepart.com"
             />
           </article>
           <ContentFooter />
