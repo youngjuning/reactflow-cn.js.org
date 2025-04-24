@@ -93,26 +93,28 @@ const DocLayout: FC = () => {
         {showSidebar && <Sidebar />}
         <Content>
           <article>
-            {/* <Adsense
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-client="ca-pub-5641491107630454"
-              data-ad-slot="6927942793"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-              data-page-url="https://nablepart.com"
-            /> */}
-            <a href="https://tensorium.ai/?aff=youngjuning" target="_blank"><img src="https://tensorium.ai/gif/Tens-1200x150.gif" alt="Tensorium" width={"100%"}/></a>
-            {outlet}
+            {/* zisheng_top */}
             <Adsense
-              className="adsbygoogle"
-              style={{ display: "block" }}
+              className="adsbygoogle adsbygoogle-bottom"
+              style={{ display: 'block'}}
               data-ad-client="ca-pub-5641491107630454"
-              data-ad-slot="5596588097"
+              data-ad-slot="1645676004"
+              data-page-url="https://www.nablepart.com/reactflow-cn"
               data-override-format="true"
               data-ad-format="auto"
               data-full-width-responsive="true"
-              data-page-url="https://nablepart.com"
+            />
+            {outlet}
+            {/* zisheng_bottom */}
+            <Adsense
+              className="adsbygoogle adsbygoogle-bottom"
+              style={{ display: 'block'}}
+              data-ad-client="ca-pub-5641491107630454"
+              data-ad-slot="5702084207"
+              data-page-url="https://www.nablepart.com/reactflow-cn"
+              data-override-format="true"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
             />
           </article>
           <ContentFooter />
